@@ -1,0 +1,23 @@
+[
+ {
+    "firstName": "David",
+    "lastName": "Bermudez",
+    "email": "david@msn.com",
+    "favoriteColor": "Blue",
+    "birthday": "03/08/1997"
+ },
+ {
+    "firstName": "Andrew",
+    "lastName": "Rodriguez",
+    "email": "ars25@gmail.com",
+    "favoriteColor": "Black",
+    "birthday": "10/10/1980"
+ },
+ {
+    "firstName": "Debbie",
+    "lastName": "Cueva",
+    "email": "dvc1977@gmail.com",
+    "favoriteColor": "Pink",
+    "birthday": "04/27/1999"
+ }
+]

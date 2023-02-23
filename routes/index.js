@@ -1,6 +1,10 @@
-const routes = require('express').Router();
+/* W01const routes = require('express').Router();
 const myController = require('../controllers');
 
-routes.get('/', myController.testingFunction);
+routes.get('/', myController.testingFunction);*/
 
-module.exports = routes;
+const router = require("express").Router();
+
+router.use("/contacts", require("./contacts"));
+
+module.exports = router;

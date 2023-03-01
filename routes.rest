@@ -18,3 +18,33 @@ Content-Type: application/json
 //------------------
 //RENDER
 //------------------
+### GETS ALL CONTACTS FROM RENDER
+GET https://cse341-a3.onrender.com/contacts HTTP/1.1
+### GETS CONTACT BY ID
+GET https://cse341-a3.onrender.com/contacts/63f7a3de67c284189b867fbd HTTP/1.1
+### POST NEW CONTACT
+POST https://cse341-a3.onrender.com/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eugeni", 
+    "lastName": "Alcover", 
+    "email": "euge@alcover.com", 
+    "favoriteColor": "Blue", 
+    "birthday": "11/14/1997"
+}
+
+### UPDATE AN EXISTING CONTACT
+PUT https://cse341-a3.onrender.com/contacts/63ffa91d1e836e682dc4e3e9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eugeni", 
+    "lastName": "Alcover", 
+    "email": "euge@alcover.com", 
+    "favoriteColor": "Red", 
+    "birthday": "11/14/1997"
+}
+
+### DELETE AN EXISTING CONTACT
+DELETE https://cse341-a3.onrender.com/contacts/63ffa91d1e836e682dc4e3e9 HTTP/1.1

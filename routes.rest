@@ -1,4 +1,20 @@
-###
+//LOCALHOST DEPLOY
+//-----------------
+### GET ALL CONTACTS
 GET http://localhost:8080/contacts
-###
+### GET CONTACT BY ID
 GET http://localhost:8080/contacts/63f7a3de67c284189b867fbd
+### CREATE A NEW CONTACT 
+POST http://localhost:8080/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Eugeni", 
+    "lastName": "Alcover", 
+    "email": "euge@alcover.com", 
+    "favoriteColor": "Blue", 
+    "birthday": "11/14/1997"
+}
+//------------------
+//RENDER
+//------------------

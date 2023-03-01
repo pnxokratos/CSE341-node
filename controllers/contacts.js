@@ -24,6 +24,55 @@ const getSingle = async (req, res) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(lists[0]);
   });
+};
+
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'An error occurred while creating this record.');
+  }
+};
+  
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb.getDb().db().collection('contacts').replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occurred while updating this record.');
+  }
+};
+  
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  
+  const response = await mongodb.getDb().db().collection('contacts').deleteOne({ _id: userId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'An error occurred while deleting this record.');
+  }
+}; 
+
 
   // const result = await mongodb
   //   .getDb()
@@ -33,6 +82,6 @@ const getSingle = async (req, res) => {
   //   .find({ _id: ObjectId(req.params.id) });
   // res.setHeader("Content-Type", "application/json");
   // res.status(200).json(result);
-};
 
-module.exports = { getAll, getSingle };
+
+module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };

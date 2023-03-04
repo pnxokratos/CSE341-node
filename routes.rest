@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### UPDATE AN EXISTING CONTACT
-PUT https://cse341-a3.onrender.com/contacts/63ffa91d1e836e682dc4e3e9 HTTP/1.1
+PUT https://cse341-a3.onrender.com/contacts/63ffaf472761efb93e10287c HTTP/1.1
 Content-Type: application/json
 
 {
@@ -47,4 +47,4 @@ Content-Type: application/json
 }
 
 ### DELETE AN EXISTING CONTACT
-DELETE https://cse341-a3.onrender.com/contacts/63ffa91d1e836e682dc4e3e9 HTTP/1.1
+DELETE https://cse341-a3.onrender.com/contacts/63ffaf472761efb93e10287c HTTP/1.1
